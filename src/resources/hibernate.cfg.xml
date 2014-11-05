@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	
+    	<!-- datos de la conexión de la BD -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">coramadministrador2008</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/abarrotestpv</property>
+        <property name="hibernate.connection.username">coram</property>
+        
+        <!-- pool de conexiones JDBC -->
+        <property name="connection.pool.size">1</property>
+        
+        <!-- dialecto SQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+        
+        <!-- habilita el manejo automático de contexto de sesión por parte de Hibernate -->
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- inhabilita el caché de 2do nivel -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        
+        <!-- imprime todo el SQL ejecutado en la salida estándar -->
+        <property name="show_sql">true</property>
+        
+        <!-- borra y recrea la BD en cada arranque -->
+        <!--  <property name="hbm2ddl.auto">create</property>-->
+        
+        <mapping resource="map/Ejemplo.hbm.xml"/>
+        
+    </session-factory>
+</hibernate-configuration>
